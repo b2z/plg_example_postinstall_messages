@@ -1,4 +1,6 @@
 Post-install messages example plugin for Joomla! 3.2+
 ================================
 
-This is the example plugin of the post-install messages.
+The plugin is an example of the post-install messages implementation.
+
+Плагин служит примером реализации послеустановочных сообщений.
