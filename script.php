@@ -26,33 +26,34 @@ class plgSystemExample_Postinstall_MessagesInstallerScript
 	public function install($parent)
 	{
 		$db = JFactory::getDbo();
-		$query = 'INSERT INTO ' . $db->quoteName('#__postinstall_messages')
-			. '(`extension_id`,
-			`title_key`, 
-			`description_key`, 
-			`action_key`, 
-			`language_extension`, 
-			`language_client_id`, 
-			`type`, 
-			`action_file`, 
-			`action`, 
-			`condition_file`, 
-			`condition_method`, 
-			`version_introduced`, 
-			`enabled`) VALUES '
-			. '(700,
-			"PLG_SYSTEM_EXAMPLE_POSTINSTALL_MESSAGES_POSTINSTALL_TITLE", 
-			"PLG_SYSTEM_EXAMPLE_POSTINSTALL_MESSAGES_POSTINSTALL_BODY", 
-			"PLG_SYSTEM_EXAMPLE_POSTINSTALL_MESSAGES_POSTINSTALL_ACTION",
-			"plg_system_example_postinstall_messages",
-			1,
-			"action", 
-			"site://plugins/system/example_postinstall_messages/postinstall/actions.php",
-			"example_postinstall_action", 
-			"site://plugins/system/example_postinstall_messages/postinstall/actions.php",
-			"example_postinstall_condition", 
-			"3.2.0", 
-			1)';
+		$query = $db->getQuery(true)
+			->insert($db->quoteName('#__postinstall_messages'))
+			->columns('`extension_id`,
+				`title_key`,
+				`description_key`,
+				`action_key`,
+				`language_extension`,
+				`language_client_id`,
+				`type`,
+				`action_file`,
+				`action`,
+				`condition_file`,
+				`condition_method`,
+				`version_introduced`,
+				`enabled`')
+			->values('700,
+				"PLG_SYSTEM_EXAMPLE_POSTINSTALL_MESSAGES_POSTINSTALL_TITLE",
+				"PLG_SYSTEM_EXAMPLE_POSTINSTALL_MESSAGES_POSTINSTALL_BODY",
+				"PLG_SYSTEM_EXAMPLE_POSTINSTALL_MESSAGES_POSTINSTALL_ACTION",
+				"plg_system_example_postinstall_messages",
+				1,
+				"action",
+				"site://plugins/system/example_postinstall_messages/postinstall/actions.php",
+				"example_postinstall_action",
+				"site://plugins/system/example_postinstall_messages/postinstall/actions.php",
+				"example_postinstall_condition",
+				"3.2.0",
+				1');
 		$db->setQuery($query);
 		$db->execute();
 	}
@@ -67,8 +68,9 @@ class plgSystemExample_Postinstall_MessagesInstallerScript
 	public function uninstall($parent)
 	{
 		$db = JFactory::getDbo();
-		$query = 'DELETE FROM ' . $db->quoteName('#__postinstall_messages') .
-			' WHERE ' . $db->quoteName('language_extension') . ' = ' . $db->quote('plg_system_example_postinstall_messages');
+		$query = $db->getQuery(true)
+			->delete($db->quoteName('#__postinstall_messages'))
+			->where($db->quoteName('language_extension') . ' = ' . $db->quote('plg_system_example_postinstall_messages'));
 		$db->setQuery($query);
 		$db->execute();
 	}

@@ -16,7 +16,7 @@ defined('_JEXEC') or die;
  *
  * @since   1.0
  */
-public function example_postinstall_condition()
+function example_postinstall_condition()
 {
 	$db = JFactory::getDbo();
 	$query = $db->getQuery(true)
@@ -43,7 +43,7 @@ public function example_postinstall_condition()
  *
  * @since   1.0
  */
-public function example_postinstall_action()
+function example_postinstall_action()
 {
 	// Get the plugin information
 	$db = JFactory::getDbo();
