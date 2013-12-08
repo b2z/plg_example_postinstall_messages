@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<extension type="plugin" version="3.0" method="upgrade" group="system">
+	<name>plg_system_example_postinstall_messages</name>
+	<author>b2z aka Dmitry Rekun</author>
+	<creationDate>December 2013</creationDate>
+	<authorEmail>bzzjuka@gmail.com</authorEmail>
+	<authorUrl>http://joomlablog.ru</authorUrl>
+	<copyright>Copyright (C) 2013 Dmitry Rekun. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later; see license.txt</license>
+	<version>1.0.0</version>
+	<description>PLG_SYSTEM_EXAMPLE_POSTINSTALL_MESSAGES_XML_DESC</description>
+
+	<scriptfile>script.php</scriptfile>
+
+	<files>
+		<filename plugin="example_postinstall_messages">example_postinstall_messages.php</filename>
+		<filename>index.html</filename>
+		<folder>postinstall</folder>
+	</files>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_system_example_postinstall_messages.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_system_example_postinstall_messages.sys.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.plg_system_example_postinstall_messages.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.plg_system_example_postinstall_messages.sys.ini</language>
+	</languages>
+</extension>
